@@ -45,7 +45,11 @@ export default function RootLayout ({
         <div>
           {children}
         </div>
-        <footer></footer>
+        <footer>
+          <div className=''></div>
+          <div></div>
+          <div></div>
+        </footer>
       </body>
     </html>
   )
