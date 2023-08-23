@@ -4,7 +4,7 @@ const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
@@ -12,6 +12,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'img-fondo-footer': 'url("/assets/imgs/bgFooter.jpg")'
       },
       colors: {
         primary: '#0065ad',
@@ -20,8 +21,8 @@ const config: Config = {
         hover: '#42bfdb',
         'red-tel': '#dc2626'
       }
-    },
+    }
   },
-  plugins: [],
+  plugins: []
 }
 export default config
