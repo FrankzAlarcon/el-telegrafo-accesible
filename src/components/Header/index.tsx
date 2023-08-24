@@ -1,13 +1,28 @@
 'use client'
 
 import React, { useState, type FC } from 'react'
-import Button from '../Button'
 import Image from 'next/image'
 import NavBar from './NavBar'
 import NavLink from './NavLink'
 import { routes } from '@/helpers/routes'
 import ReactSwitch from 'react-switch'
 import Link from 'next/link'
+
+const MoonIcon = (): JSX.Element => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="ml-[2px] mt-[2px] w-6 h-6">
+      <path className='stroke-white' strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+    </svg>
+  )
+}
+
+const SunIcon = (): JSX.Element => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="ml-1 pt-[2px] w-6 h-6">
+      <path className='stroke-white' strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  )
+}
 
 const Header: FC<any> = () => {
   const [showNavBar, setShowNavBar] = useState(false)
@@ -16,7 +31,9 @@ const Header: FC<any> = () => {
     <header>
       <div className='flex flex-col p-2 md:py-2 md:p-5 gap-2 md:flex-row md:justify-between'>
         <div className='flex flex-col gap-8 md:flex-row md:justify-between items-center ' >
-          <img src="/assets/imgs/logo.png" alt="El Telégrafo Logo" />
+          <Link href="/">
+            <img src="/assets/imgs/logo.png" alt="El Telégrafo Logo" />
+          </Link>
         </div>
         <div className='flex justify-between px-2'>
           {
@@ -47,11 +64,15 @@ const Header: FC<any> = () => {
                 height={36}
               />
             </Link>
-            <Button>
-              <ReactSwitch
+
+            <ReactSwitch
               checked={darkMode}
-              onChange={() => setDarkMode(!darkMode)} />
-            </Button>
+              onChange={() => setDarkMode(!darkMode)}
+              offColor='#374151'
+              onColor='#faba00'
+              checkedIcon={<SunIcon />}
+              uncheckedIcon={<MoonIcon />}
+            />
           </div>
         </div>
       </div>

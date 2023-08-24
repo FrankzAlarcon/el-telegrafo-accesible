@@ -1,5 +1,6 @@
 import { type NewsLevel } from '@/interfaces/news'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { type FC } from 'react'
 
 interface LinearCardProps {
@@ -9,6 +10,7 @@ interface LinearCardProps {
   description: string
   image: string
   alt: string
+  href: string
 }
 
 const LinearCard: FC<LinearCardProps> = ({
@@ -17,27 +19,30 @@ const LinearCard: FC<LinearCardProps> = ({
   level,
   timeReading,
   image,
-  alt
+  alt,
+  href
 }) => {
   return (
-    <div className='p-2 sm:flex sm:gap-4 sm:items-center'>
-      <div>
-        <Image
-          src={image}
-          alt={alt}
-          width={140}
-          height={130}
-          className='mx-auto rounded-md max-w-[190px] max-h-[130px]'
-        />
-      </div>
-      <div>
-        <h3 className='font-bold'>{title}</h3>
-        <p className='text-terciary font-light text-sm'>{description}</p>
-        <div className='pt-1'>
-        <span className='text-red-tel'>{level}</span> · <span className='text-terciary'>{timeReading}</span>
-      </div>
-      </div>
-    </div>
+    <Link href={href}>
+      <article className='p-2 sm:flex sm:gap-4 sm:items-center'>
+        <div>
+          <Image
+            src={image}
+            alt={alt}
+            width={140}
+            height={130}
+            className='mx-auto rounded-md w-auto h-auto max-w-[190px] max-h-[130px]'
+          />
+        </div>
+        <div>
+          <h3 className='font-bold'>{title}</h3>
+          <p className='text-terciary font-light text-sm'>{description}</p>
+          <div className='pt-1'>
+          <span className='text-red-tel'>{level}</span> · <span className='text-terciary'>{timeReading}</span>
+        </div>
+        </div>
+      </article>
+    </Link>
   )
 }
 

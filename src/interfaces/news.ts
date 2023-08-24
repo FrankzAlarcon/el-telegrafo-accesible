@@ -7,3 +7,10 @@ export interface NewsWithDescription {
   readingTime: string
   image: string
 }
+
+export type NewsWithoutDescription = Omit<NewsWithDescription, 'description'>
+
+export interface BreakingNews {
+  title: string
+  hour: string
+}
