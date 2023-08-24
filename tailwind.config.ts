@@ -20,6 +20,16 @@ const config: Config = {
         terciary: '#374151',
         hover: '#42bfdb',
         'red-tel': '#dc2626'
+      },
+      keyframes: {
+        navbarAnimation: {
+          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0px)' }
+        },
+        opacity: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        }
       }
     }
   },

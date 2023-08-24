@@ -7,13 +7,15 @@ interface SquareCardProps {
   level: NewsLevel
   timeReading: string
   rounded?: boolean
+  small?: boolean
 }
 
 const SquareCard: FC<SquareCardProps> = ({
   title,
   level,
   timeReading,
-  rounded = false
+  rounded = false,
+  small = false
 }) => {
   return (
     <div className='p-2'>
@@ -22,10 +24,10 @@ const SquareCard: FC<SquareCardProps> = ({
         alt='Noticia Destacada'
         width={200}
         height={200}
-        className={`${rounded ? 'rounded-lg' : ''} w-full`}
+        className={`${rounded ? 'rounded-lg' : ''} w-full max-h-[450px]`}
       />
       <div>
-        <h3 className='text-2xl font-bold'>{title}</h3>
+        <h3 className={`${small ? 'text-base' : 'text-2xl'} font-bold`}>{title}</h3>
         <div className='pt-1'>
           <span className='text-red-tel'>{level}</span> · <span className='text-terciary'>{timeReading}</span>
         </div>
