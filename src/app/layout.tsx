@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Oswald } from 'next/font/google'
 import Link from 'next/link'
 import Header from '@/components/Header'
+import LogoIcon from '@/components/LogoIcon'
+import { icons } from '@/helpers/icons'
 
 const oswald = Oswald({ subsets: ['latin'] })
 
@@ -45,11 +47,19 @@ export default function RootLayout ({
             }
           </div>
           <nav className='flex flex-col gap-4'>
-            <div className='flex gap-6'>
-              <a className='hover:scale-110 duration-200' href="https://www.facebook.com/diarioeltelegrafo/?locale=es_LA" target='_blank '><img src="/assets/svgs/facebook.svg" alt="icono de facebook" /></a>
-              <a className='hover:scale-110 duration-200' href="https://www.instagram.com/el_telegrafo/" target='_blank '><img src="/assets/svgs/instagram.svg" alt="icno de instagram" /></a>
-              <a className='hover:scale-110 duration-200' href="https://twitter.com/el_telegrafo?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target='_blank '><img src="/assets/svgs/twitter.svg" alt="icono de twitter" /></a>
-              <a className='hover:scale-110 duration-200' href="https://www.youtube.com/user/eltelegrafoec" target='_blank '><img src="/assets/svgs/youtube.svg" alt="icono de youtube" /></a>
+            <div className='flex gap-6 justify-center items-center'>
+              {
+                icons.map((icon) => (
+                  <LogoIcon
+                    key={icon.href}
+                    href={icon.href}
+                    imageSrc={icon.imageSrc}
+                    imageAlt={icon.imageAlt}
+                    width={icon.width}
+                    height={icon.height}
+                  />
+                ))
+              }
             </div>
             <div className='flex flex-col gap-1 items-center'>
               <p className='text-sm'>SAM SALVADOR E6-49 Y ELOY ALFARO</p>

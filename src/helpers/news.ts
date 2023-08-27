@@ -57,10 +57,10 @@ export const breakingNews: BreakingNews[] = [
     title: 'Ángel Di María podría regresar al Benfica de Portugal',
     hour: '19:50'
   }, {
-    title: 'Luis Suárez puede necesitar una prótesis en la rodilla, admite presidente de Gremio ',
+    title: 'Luis Suárez puede necesitar una prótesis en la rodilla, admite presidente de Gremio',
     hour: '19:48'
   }, {
-    title: 'Pichincha, Imbabura y Loja con radiación extremadamente alta este jueves 22 de junio',
+    title: '¿En esta Asamblea habrá legisladores más o menos votados?',
     hour: '19:35'
   }, {
     title: 'Una mujer fue brutalmente atacada por los perros de sus dueños de casa',

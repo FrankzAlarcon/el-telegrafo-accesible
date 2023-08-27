@@ -3,35 +3,42 @@
 import BreakingNews from '@/components/NewsCard/BreakingNews'
 import LinearCard from '@/components/NewsCard/LinearCard'
 import SquareCard from '@/components/NewsCard/SquareCard'
-import { breakingNews, newsWithDescription, newsWithoutDescription } from '@/helpers/news'
+import { breakingNews } from '@/helpers/news'
+import { getNewsByLevel, getPoularNews } from '@/services/news.service'
 
-export default function Home (): JSX.Element {
+export default async function Home (): Promise<JSX.Element> {
+  const popularNews = await getPoularNews()
+  const nationalNews = await getNewsByLevel('Nacionales', false, 4)
+  const mainNewsIndex = popularNews.findIndex((news) => news.title === 'Ecuador se une al Acuerdo para la exploración aeroespacial')
+
+  const mainNews = popularNews.splice(mainNewsIndex, 1)[0]
+
   return (
     <div className='p-2 py-2 lg:px-4'>
       <section className="lg:grid lg:grid-cols-5">
         <div className='lg:col-span-3'>
           <SquareCard
             rounded
-            level="Nacionales"
-            timeReading="3 mins de lectura"
-            title="Ecuador se une al Acuerdo para la exploración aeroespacial"
-            image="/assets/imgs/noticia_destacada.jpg"
-            alt={'Noticia: Ecuador se une al Acuerdo para la exploración aeroespacial'}
-            href="/noticia"
+            level={mainNews.level}
+            timeReading={mainNews.readingTime}
+            title={mainNews.title}
+            image={mainNews.image.url}
+            alt={mainNews.image.description}
+            href={`/noticia/${mainNews.slug}`}
           />
         </div>
         <div className='lg:col-span-2'>
           {
-            newsWithDescription.map((news) => (
+            popularNews.map((news) => (
               <LinearCard
-                key={news.title}
+                key={news.id}
                 title={news.title}
                 description={news.description}
                 level={news.level}
                 timeReading={news.readingTime}
-                image={news.image}
-                alt={`Noticia: ${news.title}`}
-                href="/noticia"
+                image={news.image.url}
+                alt={news.image.description}
+                href={`/noticia/${news.slug}`}
               />
             ))
           }
@@ -42,16 +49,16 @@ export default function Home (): JSX.Element {
           <h3 className='text-2xl text-primary font-bold py-4'>Noticias Nacionales</h3>
           <div className='md:grid md:grid-cols-2'>
             {
-              newsWithoutDescription.map((news) => (
+              nationalNews.map((news) => (
                 <SquareCard
                   key={news.title}
                   title={news.title}
                   level={news.level}
                   timeReading={news.readingTime}
-                  image={news.image}
-                  alt={`Noticia: ${news.title}`}
+                  image={news.image.url}
+                  alt={news.image.description}
                   small
-                  href="/noticia"
+                  href={`/noticia/${news.slug}`}
                 />
               ))
             }
@@ -66,7 +73,7 @@ export default function Home (): JSX.Element {
                 key={news.title}
                 hour={news.hour}
                 title={news.title}
-                href="/noticia"
+                href={'/noticia/los-precios-de-las-entradas-a-luis-miguel-oscilan-entre-usd-35-y-269'}
               />
             ))
           }
