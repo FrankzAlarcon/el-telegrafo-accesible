@@ -13,7 +13,7 @@ const FAQPage: FC<any> = () => {
     },
     {
       question: '¿Dónde puedo encontrar noticias de última hora?',
-      answer: 'Nuestras noticias de última hora se encuentran en la sección "Últimas noticias" en la página de inicio. También puedes activar las notificaciones para recibir alertas en tu dispositivo móvil cuando ocurran noticias importantes.',
+      answer: 'Nuestras noticias de última hora se encuentran en la sección "Portada" en la página de inicio. También puedes activar las notificaciones para recibir alertas en tu dispositivo móvil cuando ocurran noticias importantes.',
     },
     {
       question: '¿Cómo puedo contribuir con noticias o artículos?',
