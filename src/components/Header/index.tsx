@@ -1,12 +1,13 @@
 'use client'
 
-import React, { useState, type FC } from 'react'
+import React, { useState, type FC, useEffect } from 'react'
 import Image from 'next/image'
 import NavBar from './NavBar'
 import NavLink from './NavLink'
 import { routes } from '@/helpers/routes'
 import ReactSwitch from 'react-switch'
 import Link from 'next/link'
+import { useMode } from '@/hooks/useMode'
 
 const MoonIcon = (): JSX.Element => {
   return (
@@ -26,13 +27,22 @@ const SunIcon = (): JSX.Element => {
 
 const Header: FC<any> = () => {
   const [showNavBar, setShowNavBar] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
+  const { darkMode, setDarkMode } = useMode()
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
+  }, [darkMode])
+
   return (
-    <header>
+    <header className={`${darkMode ? 'dark' : ''}`}>
       <div className='flex flex-col p-2 md:py-2 md:p-5 gap-2 md:flex-row md:justify-between'>
         <div className='flex flex-col gap-8 md:flex-row md:justify-between items-center ' >
           <Link href="/">
-            <img src="/assets/imgs/logo.png" alt="El Telégrafo Logo" />
+            <img src={`/assets/imgs/${darkMode ? 'logo2.png' : 'logo.png'}`} alt="El Telégrafo Logo" />
           </Link>
         </div>
         <div className='flex justify-between px-2'>
@@ -68,8 +78,8 @@ const Header: FC<any> = () => {
             <ReactSwitch
               checked={darkMode}
               onChange={() => setDarkMode(!darkMode)}
-              offColor='#374151'
-              onColor='#faba00'
+              offColor='#faba00'
+              onColor='#374151'
               checkedIcon={<SunIcon />}
               uncheckedIcon={<MoonIcon />}
             />

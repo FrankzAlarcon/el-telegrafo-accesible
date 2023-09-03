@@ -16,6 +16,11 @@ body {
   color: #000;
 }
 
+.dark {
+  background-color: #242424;
+  color: #fff;
+}
+
 nav {
   color: #ffffff;
 }

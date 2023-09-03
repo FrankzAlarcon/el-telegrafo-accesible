@@ -1,3 +1,5 @@
+'use client'
+import { useMode } from '@/hooks/useMode'
 import { type NewsLevel } from '@/interfaces/news'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,9 +24,11 @@ const LinearCard: FC<LinearCardProps> = ({
   alt,
   href
 }) => {
+  const { darkMode } = useMode()
+
   return (
     <Link href={href}>
-      <article className='p-2 sm:flex sm:gap-4 sm:items-center'>
+      <article className={`rounded-md sm:flex sm:gap-4 sm:items-center ${darkMode ? 'bg-card-color' : 'bg-white'}`}>
         <div>
           <Image
             src={image}
@@ -36,9 +40,9 @@ const LinearCard: FC<LinearCardProps> = ({
         </div>
         <div>
           <h3 className='font-bold'>{title}</h3>
-          <p className='text-terciary font-light text-sm'>{description}</p>
+          <p className={`text-terciary font-light text-sm ${darkMode ? 'text-white' : ''}`}>{description}</p>
           <div className='pt-1'>
-          <span className='text-red-tel'>{level}</span> · <span className='text-terciary'>{timeReading}</span>
+          <span className={`${darkMode ? 'text-primary' : 'text-red-tel'}`}>{level}</span> · <span className={`text-terciary ${darkMode ? 'text-white' : ''}`}>{timeReading}</span>
         </div>
         </div>
       </article>

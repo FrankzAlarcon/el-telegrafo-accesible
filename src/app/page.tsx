@@ -3,6 +3,7 @@
 import BreakingNews from '@/components/NewsCard/BreakingNews'
 import LinearCard from '@/components/NewsCard/LinearCard'
 import SquareCard from '@/components/NewsCard/SquareCard'
+import Title from '@/components/Title'
 import { breakingNews } from '@/helpers/news'
 import { getNewsByLevel, getPoularNews } from '@/services/news.service'
 
@@ -15,7 +16,7 @@ export default async function Home (): Promise<JSX.Element> {
 
   return (
     <div className='p-2 py-2 lg:px-4'>
-      <section className="lg:grid lg:grid-cols-5">
+      <section className="lg:grid lg:grid-cols-5 lg:gap-2">
         <div className='lg:col-span-3'>
           <SquareCard
             rounded
@@ -27,7 +28,7 @@ export default async function Home (): Promise<JSX.Element> {
             href={`/noticia/${mainNews.slug}`}
           />
         </div>
-        <div className='lg:col-span-2'>
+        <div className='lg:col-span-2 flex flex-col gap-y-2'>
           {
             popularNews.map((news) => (
               <LinearCard
@@ -46,8 +47,8 @@ export default async function Home (): Promise<JSX.Element> {
       </section>
       <div className='lg:flex lg:gap-8 pb-4'>
         <section>
-          <h3 className='text-2xl text-primary font-bold py-4'>Noticias Nacionales</h3>
-          <div className='md:grid md:grid-cols-2'>
+          <Title>Noticias Nacionales</Title>
+          <div className='grid md:grid-cols-2 gap-y-4 md:gap-x-8'>
             {
               nationalNews.map((news) => (
                 <SquareCard
@@ -65,7 +66,7 @@ export default async function Home (): Promise<JSX.Element> {
           </div>
         </section>
         <section>
-        <h3 className='text-2xl text-primary font-bold py-4'>Última hora</h3>
+        <Title>Última hora</Title>
         <div>
           {
             breakingNews.map((news) => (

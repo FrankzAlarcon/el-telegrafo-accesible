@@ -19,7 +19,8 @@ const config: Config = {
         secondary: '#faba00',
         terciary: '#374151',
         hover: '#42bfdb',
-        'red-tel': '#dc2626'
+        'red-tel': '#dc2626',
+        'card-color': '#4B4B4B'
       },
       keyframes: {
         navbarAnimation: {
