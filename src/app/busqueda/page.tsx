@@ -1,10 +1,12 @@
+import SearchResult from '@/components/SearchResult'
 import Searcher from '@/components/Searcher'
 import React, { type FC } from 'react'
 
 const SearchPage: FC<any> = () => {
   return (
-    <div>
+    <div className='min-h-[40vh] pt-8 md:min-h-[50vh]'>
       <Searcher />
+      <SearchResult />
     </div>
   )
 }

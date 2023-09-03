@@ -3,7 +3,8 @@ import { NextResponse } from 'next/server'
 import { config, mapNewsAttributes } from '../config'
 
 export async function GET (): Promise<NextResponse> {
-  const response = await fetch(`${config.api.baseUrl}/spaces/${config.contentful.spaceId}/environments/${config.contentful.environment}/entries`, {
+  const url = `${config.api.baseUrl}/spaces/${config.contentful.spaceId}/environments/${config.contentful.environment}/entries`
+  const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${config.contentful.deliveryToken}`
     }

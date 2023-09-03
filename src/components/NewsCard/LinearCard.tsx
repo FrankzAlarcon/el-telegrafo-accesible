@@ -13,6 +13,7 @@ interface LinearCardProps {
   image: string
   alt: string
   href: string
+  big?: boolean
 }
 
 const LinearCard: FC<LinearCardProps> = ({
@@ -22,13 +23,14 @@ const LinearCard: FC<LinearCardProps> = ({
   timeReading,
   image,
   alt,
-  href
+  href,
+  big = false
 }) => {
   const { darkMode } = useMode()
 
   return (
     <Link href={href}>
-      <article className={`rounded-md sm:flex sm:gap-4 sm:items-center ${darkMode ? 'bg-card-color' : 'bg-white'}`}>
+      <article className={`rounded-md sm:flex sm:gap-4 sm:items-center shadow-md px-2 py-1 ${darkMode ? 'bg-card-color' : 'bg-white'}`}>
         <div>
           <Image
             src={image}
@@ -40,9 +42,11 @@ const LinearCard: FC<LinearCardProps> = ({
         </div>
         <div>
           <h3 className='font-bold'>{title}</h3>
-          <p className={`text-terciary font-light text-sm ${darkMode ? 'text-white' : ''}`}>{description}</p>
-          <div className='pt-1'>
-          <span className={`${darkMode ? 'text-primary' : 'text-red-tel'}`}>{level}</span> · <span className={`text-terciary ${darkMode ? 'text-white' : ''}`}>{timeReading}</span>
+          <div>
+            <p className={`text-terciary font-light text-sm ${darkMode ? 'text-white' : ''}`}>{description}</p>
+            <div className='pt-1'>
+            <span className={`${darkMode ? 'text-primary' : 'text-red-tel'}`}>{level}</span> · <span className={`text-terciary ${darkMode ? 'text-white' : ''}`}>{timeReading}</span>
+          </div>
         </div>
         </div>
       </article>

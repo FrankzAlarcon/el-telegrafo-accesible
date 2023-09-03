@@ -8,6 +8,16 @@ export const getAllNews = async (): Promise<News[]> => {
   return data
 }
 
+export const getNewsBySearch = async (search: string): Promise<News[]> => {
+  const response = await getAllNews()
+
+  const data: News[] = response.filter((news) => {
+    return news.title.toLowerCase().includes(search.toLowerCase())
+  })
+
+  return data
+}
+
 export const getNewsBySlug = async (slug: string): Promise<News> => {
   const response = await fetch(`${baseUrl}/api/news/${slug}`)
   const data: News = await response.json()

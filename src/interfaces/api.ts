@@ -9,3 +9,9 @@ export interface WithLevelParam {
     level: string
   }
 }
+
+export interface WithSearchParam {
+  params: {
+    search: string
+  }
+}
