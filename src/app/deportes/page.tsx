@@ -2,6 +2,8 @@ import React, { type FC } from 'react'
 import { getNewsByLevel } from '@/services/news.service'
 import GeneralNew from '@/components/NewsCard/GerneralNew'
 
+export const dynamic = 'force-dynamic'
+
 const SportsNewsPage: FC<any> = async () => {
   const sportsNews = await getNewsByLevel('Deportes')
 

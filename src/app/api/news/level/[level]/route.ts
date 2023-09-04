@@ -3,6 +3,8 @@ import { type WithLevelParam } from '@/interfaces/api'
 import { type News, type NewsResponse } from '@/interfaces/news'
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET (request: Request, { params }: WithLevelParam): Promise<NextResponse> {
   const { level } = params
   // get the limit query param

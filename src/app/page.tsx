@@ -7,6 +7,8 @@ import Title from '@/components/Title'
 import { breakingNews } from '@/helpers/news'
 import { getNewsByLevel, getPoularNews } from '@/services/news.service'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home (): Promise<JSX.Element> {
   const popularNews = await getPoularNews()
   const nationalNews = await getNewsByLevel('Nacionales', false, 4)

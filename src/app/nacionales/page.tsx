@@ -3,6 +3,8 @@ import React, { type FC } from 'react'
 import GeneralNew from '@/components/NewsCard/GerneralNew'
 import Title from '@/components/Title'
 
+export const dynamic = 'force-dynamic'
+
 const NationalNewsPage: FC<any> = async () => {
   const nationalNews = await getNewsByLevel('Nacionales')
   return (

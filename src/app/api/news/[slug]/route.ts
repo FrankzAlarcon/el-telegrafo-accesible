@@ -3,6 +3,8 @@ import { config, mapNewsEntryAttributes } from '../../config'
 import { type WithSlugParam } from '@/interfaces/api'
 import { type NewsResponse } from '@/interfaces/news'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET (request: Request, { params }: WithSlugParam): Promise<NextResponse> {
   const { slug } = params
   let news: any = {}

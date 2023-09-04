@@ -2,6 +2,8 @@ import Title from '@/components/Title'
 import Transcriptor from '@/components/Transcriptor'
 import React, { type FC } from 'react'
 
+export const dynamic = 'force-dynamic'
+
 const EcuadorTVPage: FC<any> = () => {
   return (
     <>

@@ -2,6 +2,8 @@ import { getNewsByLevel } from '@/services/news.service'
 import React, { type FC } from 'react'
 import GeneralNew from '@/components/NewsCard/GerneralNew'
 
+export const dynamic = 'force-dynamic'
+
 const InternacionalesNewsPage: FC<any> = async () => {
   const internationalNews = await getNewsByLevel('Internacionales')
 

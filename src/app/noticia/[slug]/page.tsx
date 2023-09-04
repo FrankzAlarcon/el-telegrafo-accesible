@@ -7,6 +7,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { type FC } from 'react'
 
+export const dynamic = 'force-dynamic'
+
 interface NewsEntryPageProps {
   params: {
     slug: string

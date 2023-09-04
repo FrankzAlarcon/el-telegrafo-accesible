@@ -4,6 +4,8 @@ import Title from '@/components/Title'
 import LogoIcon from '@/components/LogoIcon'
 import { shareIcons } from '@/helpers/icons'
 
+export const dynamic = 'force-dynamic'
+
 const FAQPage: FC<any> = () => {
   const frequentlyAskedQuestions = [
 
