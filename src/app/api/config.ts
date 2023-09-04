@@ -12,6 +12,7 @@ export const config = {
 }
 
 export const mapNewsAttributes = (data: NewsResponse): News[] => {
+  if (data === null) return []
   return data.items.map((item) => {
     let asset: any = {
       fields: {
@@ -46,6 +47,8 @@ export const mapNewsAttributes = (data: NewsResponse): News[] => {
 }
 
 export const mapNewsEntryAttributes = (data: NewsResponse): News => {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+  if (data === null) return {} as News
   return {
     title: data.items[0].fields.title,
     slug: data.items[0].fields.slug,

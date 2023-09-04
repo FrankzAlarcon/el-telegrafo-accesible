@@ -18,7 +18,7 @@ const config: Config = {
         primary: '#0065ad',
         secondary: '#faba00',
         terciary: '#374151',
-        hover: '#42bfdb',
+        hover: '#42bfdd',
         'red-tel': '#dc2626',
         'card-color': '#4B4B4B'
       },

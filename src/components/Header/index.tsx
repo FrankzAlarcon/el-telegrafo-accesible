@@ -75,14 +75,18 @@ const Header: FC<any> = () => {
               />
             </Link>
 
-            <ReactSwitch
-              checked={darkMode}
-              onChange={() => setDarkMode(!darkMode)}
-              offColor='#faba00'
-              onColor='#374151'
-              checkedIcon={<SunIcon />}
-              uncheckedIcon={<MoonIcon />}
-            />
+            <label htmlFor="modo-claro-oscuro">
+              <ReactSwitch
+                id='modo-claro-oscuro'
+                aria-label='Modo Claro/Oscuro'
+                checked={darkMode}
+                onChange={() => setDarkMode(!darkMode)}
+                offColor='#faba00'
+                onColor='#374151'
+                checkedIcon={<SunIcon />}
+                uncheckedIcon={<MoonIcon />}
+              />
+            </label>
           </div>
         </div>
       </div>
