@@ -13,7 +13,9 @@ const NavLink: FC<NavLinkProps> = ({ href, children }) => {
   const pathname = usePathname()
   return (
     <Link
-      className={`${pathname === href ? 'bg-hover' : 'hover:bg-hover duration-300 transition-colors'} py-2 md:px-4 lg:px-8 text-lg w-full md:w-auto text-center`}
+      className={`
+      ${pathname === href ? 'bg-hover text-black' : 'hover:bg-hover hover:text-black duration-300 transition-colors'}
+      py-2 md:px-4 lg:px-8 text-lg w-full md:w-auto text-center`}
       href={href}
     >
       {children}

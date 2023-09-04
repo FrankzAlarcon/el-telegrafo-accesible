@@ -16,7 +16,7 @@ const FrequentlyAskedQuestion: FC<FrequentlyAskedQuestionProps> = ({ question, a
   const { darkMode } = useMode()
 
   return (
-    <div tabIndex={1} className="py-4 px-6 flex flex-col w-full">
+    <div className="py-4 px-6 flex flex-col w-full">
       <button
         type='button'
         className="cursor-pointer flex justify-between items-center font-bold  "
@@ -30,12 +30,13 @@ const FrequentlyAskedQuestion: FC<FrequentlyAskedQuestionProps> = ({ question, a
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
+            role='button'
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
       </button>
       {showAnswer && (
-        <p className={`mt-2 text-base text-gray-600 ${darkMode ? 'text-white' : ''}`}>{answer}</p>
+        <p className={`mt-2 text-base text-gray-800 ${darkMode ? 'text-white' : ''}`}>{answer}</p>
       )}
     </div>
   )

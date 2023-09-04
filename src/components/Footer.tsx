@@ -18,6 +18,7 @@ const Footer = (): JSX.Element => {
                 <Link
                   key={route.path}
                   href={route.path}
+                  className='bg-transparent'
                 >
                   {route.title}
                 </Link>
