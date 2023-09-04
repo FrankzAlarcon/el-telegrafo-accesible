@@ -10,7 +10,6 @@ const Searcher = (): JSX.Element => {
 
   const handleSearchNews = async (): Promise<void> => {
     const res = await getNewsBySearch(input)
-    console.log(res)
     setSearchResult(res)
   }
 

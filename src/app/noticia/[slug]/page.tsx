@@ -21,15 +21,15 @@ const NewsEntryPage: FC<NewsEntryPageProps> = async ({ params }) => {
   const relatedlNews = await getNewsByLevel(level, false, 2)
   return (
     <div className='p-2'>
-      <h1 className='text-2xl font-bold py-4 lg:px-8'>{news.title}</h1>
+      <h1 tabIndex={1} className='text-2xl font-bold py-4 lg:px-8'>{news.title}</h1>
       <div className='lg:grid lg:grid-cols-6 lg:gap-6'>
         <div className='lg:col-span-4'>
           <div className=''>
             <div className='lg:max-w-2xl lg:mx-auto'>
-              <Image src={news.image.url} width={320} height={320} className='w-full' alt={news.image.description}/>
+              <Image tabIndex={2} src={news.image.url} width={320} height={320} className='w-full' alt={news.image.description}/>
               <p className='text-secondary text-lg pt-2 lg:pt-4'>{news.publicationDate}</p>
             </div>
-            <div className='py-4 lg:px-8'>
+            <div className='py-4 lg:px-8' tabIndex={3}>
               <RichText content={news.text} />
             </div>
           </div>

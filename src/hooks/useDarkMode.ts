@@ -7,18 +7,19 @@ interface UseDarkModeProps {
 }
 
 export const useDarkMode = (): UseDarkModeProps => {
+  if (typeof window === 'undefined') return { darkMode: false, setDarkMode: () => {} }
   const [darkMode, setDarkMode] = useState(() => {
-    const item = window.localStorage.getItem('darkMode')
+    const item = localStorage.getItem('darkMode')
 
     if (item === null) {
-      window.localStorage.setItem('darkMode', 'false')
+      localStorage.setItem('darkMode', 'false')
       return false
     }
     return JSON.parse(item)
   })
 
   const setDarkModeToLocalStorage = (value: boolean): void => {
-    window.localStorage.setItem('darkMode', JSON.stringify(value))
+    localStorage.setItem('darkMode', JSON.stringify(value))
     setDarkMode(value)
   }
 

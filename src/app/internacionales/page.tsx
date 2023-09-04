@@ -2,11 +2,9 @@ import { getNewsByLevel } from '@/services/news.service'
 import React, { type FC } from 'react'
 import GeneralNew from '@/components/NewsCard/GerneralNew'
 
-
 const InternacionalesNewsPage: FC<any> = async () => {
-
   const internationalNews = await getNewsByLevel('Internacionales')
-  
+
   return (
     <div className='lg:flex lg:gap-8 pb-4 md:px-10 px-3'>
       <section>

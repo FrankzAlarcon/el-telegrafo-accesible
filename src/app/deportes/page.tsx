@@ -1,12 +1,9 @@
 import React, { type FC } from 'react'
-import { getNewsByLevel} from '@/services/news.service'
+import { getNewsByLevel } from '@/services/news.service'
 import GeneralNew from '@/components/NewsCard/GerneralNew'
 
-
-const SportsNewsPage: FC<any> = async  () => {
-
+const SportsNewsPage: FC<any> = async () => {
   const sportsNews = await getNewsByLevel('Deportes')
-  
 
   return (
     <div className='lg:flex lg:gap-8 pb-4 md:px-10 px-3'>
