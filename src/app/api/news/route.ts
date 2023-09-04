@@ -8,7 +8,8 @@ export async function GET (): Promise<NextResponse> {
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${config.contentful.deliveryToken}`
-      }
+      },
+      cache: 'no-cache'
     })
     const data: NewsResponse = await response.json()
 

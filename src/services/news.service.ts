@@ -1,9 +1,9 @@
 import { type NewsLevel, type News } from '@/interfaces/news'
 
-const baseUrl = 'http://localhost:3000'
+const baseUrl = process.env.API_URL
 
 export const getAllNews = async (): Promise<News[]> => {
-  const response = await fetch(`${baseUrl}/api/news`)
+  const response = await fetch(`${baseUrl}/api/news`, { cache: 'no-cache' })
   const data: News[] = await response.json()
   return data
 }
@@ -19,7 +19,7 @@ export const getNewsBySearch = async (search: string): Promise<News[]> => {
 }
 
 export const getNewsBySlug = async (slug: string): Promise<News> => {
-  const response = await fetch(`${baseUrl}/api/news/${slug}`)
+  const response = await fetch(`${baseUrl}/api/news/${slug}`, { cache: 'no-cache' })
   const data: News = await response.json()
   return data
 }
@@ -31,13 +31,13 @@ export const getNewsByLevel = async (level: NewsLevel, withPopular = true, limit
     url = `${url}&with_popular=false`
   }
 
-  const response = await fetch(url)
+  const response = await fetch(url, { cache: 'no-cache' })
   const data: News[] = await response.json()
   return data
 }
 
 export const getPoularNews = async (): Promise<News[]> => {
-  const response = await fetch(`${baseUrl}/api/news/popular`)
+  const response = await fetch(`${baseUrl}/api/news/popular`, { cache: 'no-cache' })
   const data: News[] = await response.json()
   return data
 }

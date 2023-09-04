@@ -6,7 +6,8 @@ export async function GET (): Promise<NextResponse> {
   const response = await fetch(`${config.api.baseUrl}/spaces/${config.contentful.spaceId}/environments/${config.contentful.environment}/entries?content_type=news&fields.isPopular=true&limit=5`, {
     headers: {
       Authorization: `Bearer ${config.contentful.deliveryToken}`
-    }
+    },
+    cache: 'no-cache'
   })
 
   const data: NewsResponse = await response.json()
