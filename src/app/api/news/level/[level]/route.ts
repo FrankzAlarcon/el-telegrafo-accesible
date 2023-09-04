@@ -14,17 +14,21 @@ export async function GET (request: Request, { params }: WithLevelParam): Promis
   if (withPopular === 'false') {
     url = `${url}&fields.isPopular=false`
   }
+  let news: News[] = []
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${config.contentful.deliveryToken}`
+      },
+      cache: 'no-store'
+    })
 
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${config.contentful.deliveryToken}`
-    },
-    cache: 'no-cache'
-  })
+    const data: NewsResponse = await response.json()
 
-  const data: NewsResponse = await response.json()
-
-  const news: News[] = mapNewsAttributes(data)
-
-  return NextResponse.json(news)
+    news = mapNewsAttributes(data)
+    return NextResponse.json(news)
+  } catch (error) {
+    console.log(error)
+    return NextResponse.json(news)
+  }
 }
