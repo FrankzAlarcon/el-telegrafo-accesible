@@ -31,6 +31,7 @@ const FrequentlyAskedQuestion: FC<FrequentlyAskedQuestionProps> = ({ question, a
             strokeWidth={1.5}
             stroke="currentColor"
             role='button'
+            aria-label='Mostrar-Ocultar Respuesta'
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>

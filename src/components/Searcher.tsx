@@ -29,10 +29,13 @@ const Searcher = (): JSX.Element => {
         <input
           type="text"
           id="searcher"
-          placeholder="Ingresa una título de una noticia"
+          // placeholder="Ingresa una título de una noticia"
           className={`bg-transparent py-2 px-1 focus:outline-none active:outline-none outline:none w-full ${darkMode ? 'placeholder:text-white' : ''}`}
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          autoComplete='off'
+          name='searcher'
+          role='search'
         />
       </label>
       <button

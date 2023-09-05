@@ -32,7 +32,7 @@ const GeneralNew: FC<GeneralNewProps> = ({
           className="w-full max-h[450px] mb-2"
         />
         <div className="flex flex-col pb-2 md:pb-4 gap-2 md:justify-between md:min-h-[150px] lg:h-[200px]">
-          <h3 className="text-2x1 font-bold" >{title}</h3>
+          <p className="text-2x1 font-bold" >{title}</p>
           <p className={`text-base text-gray-600 ${darkMode ? 'text-white' : ''}`}>{description}</p>
           <span className={`text-base text-gray-950 ${darkMode ? 'text-secondary' : ''}`}>{date}</span>
         </div>

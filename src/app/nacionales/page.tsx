@@ -10,7 +10,7 @@ const NationalNewsPage: FC<any> = async () => {
   return (
     <div className='lg:flex lg:gap-8 pb-4 md:px-10 px-3 '>
       <section>
-      <Title>NACIONALES</Title>
+      <Title as='h1'>NACIONALES</Title>
       <div className='grid md:grid-cols-3 gap-y-5 grid-cols-1'>
         {nationalNews.map((news) => (
           <GeneralNew

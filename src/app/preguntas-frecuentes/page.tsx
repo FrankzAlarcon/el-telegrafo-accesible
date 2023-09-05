@@ -38,7 +38,7 @@ const frequentlyAskedQuestions = [
 const FAQPage: FC<any> = () => {
   return (
     <div className=' p-2 flex flex-col gap-6 mb-3'>
-      <Title>PREGUNTAS FRECUENTES</Title>
+      <Title as='h1'>PREGUNTAS FRECUENTES</Title>
       <div className='md:grid-cols-2 grid'>
         {frequentlyAskedQuestions.map((qa, index) => (
           <FrequentlyAskedQuestion
@@ -49,7 +49,7 @@ const FAQPage: FC<any> = () => {
         ))}
       </div>
       <div className='flex gap-3 justify-center items-center border-b pb-2 lg:px-8'>
-        <Title className='text-lg text-yellow-700'>Nuestras redes sociales:</Title>
+        <Title as='h2' className='text-lg text-yellow-700'>Nuestras redes sociales:</Title>
         <div className='flex gap-2 items-center'>
           {
             shareIcons.map((icon) => (

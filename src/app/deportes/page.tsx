@@ -1,6 +1,7 @@
 import React, { type FC } from 'react'
 import { getNewsByLevel } from '@/services/news.service'
 import GeneralNew from '@/components/NewsCard/GerneralNew'
+import Title from '@/components/Title'
 
 export const dynamic = 'force-dynamic'
 
@@ -10,7 +11,7 @@ const SportsNewsPage: FC<any> = async () => {
   return (
     <div className='lg:flex lg:gap-8 pb-4 md:px-10 px-3'>
       <section>
-      <h3 className='text-2xl text-primary font-bold py-4'>DEPORTES</h3>
+      <Title as='h1'>DEPORTES</Title>
       <div className='grid md:grid-cols-3 gap-y-5 grid-cols-1'>
         {sportsNews.map((news) => (
           <GeneralNew

@@ -1,7 +1,7 @@
 import LogoIcon from '@/components/LogoIcon'
 import RichText from '@/components/RichText'
 import Title from '@/components/Title'
-import Tweet from '@/components/Tweet'
+// import Tweet from '@/components/Tweet'
 import { shareIcons } from '@/helpers/icons'
 import { getNewsByLevel, getNewsBySlug } from '@/services/news.service'
 import Image from 'next/image'
@@ -21,7 +21,7 @@ const NewsEntryPage: FC<NewsEntryPageProps> = async ({ params }) => {
 
   const news = await getNewsBySlug(slug)
   const { level } = news
-  const relatedlNews = await getNewsByLevel(level, false, 2)
+  const relatedlNews = await getNewsByLevel(level, false, 4)
   return (
     <div className='p-2'>
       <h1 className='text-2xl font-bold py-4 lg:px-8'>{news.title}</h1>
@@ -54,7 +54,7 @@ const NewsEntryPage: FC<NewsEntryPageProps> = async ({ params }) => {
         </div>
         <div className='lg:col-span-2'>
           <div className='py-4 border-b lg:pt-0'>
-            <Title className='lg:pt-0'>Noticias Relacionadas</Title>
+            <Title as='h2' className='lg:pt-0'>Noticias Relacionadas</Title>
             <div>
               {
                 relatedlNews.map((news) => (
@@ -71,10 +71,10 @@ const NewsEntryPage: FC<NewsEntryPageProps> = async ({ params }) => {
               }
             </div>
           </div>
-          <div className='py-4 border-b'>
-            <Title>Redes Sociales</Title>
+          {/* <div className='py-4 border-b'>
+            <Title as='h2'>Redes Sociales</Title>
             <Tweet />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
