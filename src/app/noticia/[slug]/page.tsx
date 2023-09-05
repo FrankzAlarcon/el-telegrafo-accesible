@@ -30,14 +30,14 @@ const NewsEntryPage: FC<NewsEntryPageProps> = async ({ params }) => {
           <div className=''>
             <div className='lg:max-w-2xl lg:mx-auto'>
               <Image src={news.image.url} width={320} height={320} className='w-full' alt={news.image.description}/>
-              <p className='text-yellow-700 text-lg pt-2 lg:pt-4'>{news.publicationDate}</p>
+              <Title as='p' className='text-lg pt-2 lg:pt-4'>{news.publicationDate}</Title>
             </div>
             <div className='py-4 lg:px-8'>
               <RichText content={news.text} />
             </div>
           </div>
           <div className='flex gap-3 items-center border-b pb-2 lg:px-8'>
-            <p className='text-yellow-700 text-lg'>Comparte:</p>
+            <Title as='p' className=' text-lg'>Comparte:</Title>
             <div className='flex gap-2 items-center'>
               {
                 shareIcons.map((icon) => (

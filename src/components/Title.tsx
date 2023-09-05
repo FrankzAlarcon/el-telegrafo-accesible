@@ -28,6 +28,10 @@ const Title: FC<TitleProps> = ({ children, className, as = 'h3' }) => {
       return (
         <h4 className={`text-2xl font-bold py-4 ${darkMode ? 'text-secondary' : 'text-primary'} ${className}`}>{children}</h4>
       )
+    case 'p':
+      return (
+        <p className={`text-2xl font-bold py-4 ${darkMode ? 'text-secondary' : 'text-yellow-700'} ${className}`}>{children}</p>
+      )
     default:
       return (
           <h3 className={`text-2xl font-bold py-4 ${darkMode ? 'text-secondary' : 'text-primary'} ${className}`}>{children}</h3>
