@@ -76,7 +76,7 @@ export default async function Home (): Promise<JSX.Element> {
                 key={news.title}
                 hour={news.hour}
                 title={news.title}
-                href={'/noticia/los-precios-de-las-entradas-a-luis-miguel-oscilan-entre-usd-35-y-269'}
+                href={`/noticia/${news.slug}`}
               />
             ))
           }

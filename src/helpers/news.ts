@@ -55,24 +55,31 @@ export const newsWithoutDescription: NewsWithoutDescription[] = [
 export const breakingNews: BreakingNews[] = [
   {
     title: 'Ángel Di María podría regresar al Benfica de Portugal',
-    hour: '19:50'
+    hour: '19:50',
+    slug: 'angel-di-maria-podria-regresar-al-benfica-de-portugal'
   }, {
     title: 'Luis Suárez puede necesitar una prótesis en la rodilla, admite presidente de Gremio',
-    hour: '19:48'
+    hour: '19:48',
+    slug: 'luiz-suarez-puede-necesitar-una-protesis-en-la-rodilla-admite-presidente-de-gremio'
   }, {
     title: '¿En esta Asamblea habrá legisladores más o menos votados?',
-    hour: '19:35'
+    hour: '19:35',
+    slug: 'en-esta-asamblea-habra-legisladores-mas-o-menos-votados'
   }, {
     title: 'Una mujer fue brutalmente atacada por los perros de sus dueños de casa',
-    hour: '19:32'
+    hour: '19:32',
+    slug: 'una-mujer-fue-brutalmente-atacada-por-los-perros-de-sus-duenos-de-casa'
   }, {
     title: 'Ministro Santos dice que se seguirá operando en el bloque 43-ITT, pese al triunfo del sí en la consulta',
-    hour: '19:27'
+    hour: '19:27',
+    slug: 'ministro-santos-dice-que-se-seguira-operando-en-el-bloque-43-itt-pese-al-triunfo-del-si-en-la-consulta'
   }, {
     title: '¿Cuál ha sido el rol de la primera dama en Ecuador?',
-    hour: '19:23'
+    hour: '19:23',
+    slug: 'cual-ha-sido-el-rol-de-la-primera-dama-en-ecuador'
   }, {
     title: 'Los precios de las entradas a Luis Miguel oscilan entre USD 35 y 269',
-    hour: '19:10'
+    hour: '19:10',
+    slug: 'los-precios-de-las-entradas-a-luis-miguel-oscilan-entre-usd-35-y-269'
   }
 ]
