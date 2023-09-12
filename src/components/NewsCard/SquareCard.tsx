@@ -51,7 +51,7 @@ const SquareCard: FC<SquareCardProps> = ({
           }
 
           <div className='pt-1'>
-            <span className={darkMode ? 'text-primary' : 'text-red-tel'}>{level}</span> · <span className={`${darkMode ? 'text-white' : 'text-terciary'}`}>{timeReading}</span>
+            <span className={darkMode ? 'text-blue-300' : 'text-red-tel'}>{level}</span> · <span className={`${darkMode ? 'text-white' : 'text-terciary'}`}>{timeReading}</span>
           </div>
         </div>
       </article>

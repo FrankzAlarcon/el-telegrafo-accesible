@@ -42,14 +42,14 @@ const Header: FC<any> = () => {
       <div className='flex flex-col p-2 md:py-2 md:p-5 gap-2 md:flex-row md:justify-between'>
         <div className='flex flex-col gap-8 md:flex-row md:justify-between items-center ' >
           <Link href="/">
-            <img aria-label='logo' src={`/assets/imgs/${darkMode ? 'logo2.png' : 'logo.png'}`} alt="skip to Main Content" />
+            <img aria-label='logo' src={`/assets/imgs/${darkMode ? 'logo2.png' : 'logo.png'}`} alt="El telégrafo" />
           </Link>
         </div>
         <div className='flex justify-between px-2'>
           {
             showNavBar && (
                 <button className='md:hidden' aria-label='Mostrar navbar' type='button' onClick={() => setShowNavBar(false)}>
-                  <svg role='img' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12">
+                  <svg name='Menu' aria-label='Menu' role='img' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12">
                     <path className='stroke-secondary' strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -58,7 +58,7 @@ const Header: FC<any> = () => {
           {
             !showNavBar && (
               <button className='md:hidden' aria-label='Mostrar navbar' type='button' onClick={() => setShowNavBar(true)}>
-                <svg role='img' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12">
+                <svg name='Menu' aria-label='Menu' role='img' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12">
                   <path className='stroke-secondary' strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
               </button>

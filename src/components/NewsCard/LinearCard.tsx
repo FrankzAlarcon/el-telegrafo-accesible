@@ -55,7 +55,7 @@ const LinearCard: FC<LinearCardProps> = ({
           <div>
             <p className={`text-terciary font-light text-sm ${darkMode ? 'text-white' : ''}`}>{description}</p>
             <div className='pt-1'>
-            <span className={`${darkMode ? 'text-primary' : 'text-red-tel'}`}>{level}</span> · <span className={`text-terciary ${darkMode ? 'text-white' : ''}`}>{timeReading}</span>
+            <span className={`${darkMode ? 'text-blue-300' : 'text-red-tel'}`}>{level}</span> · <span className={`text-terciary ${darkMode ? 'text-white' : ''}`}>{timeReading}</span>
           </div>
         </div>
         </div>
