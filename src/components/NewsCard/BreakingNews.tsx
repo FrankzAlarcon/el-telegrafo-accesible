@@ -11,7 +11,7 @@ const BreakingNews: FC<BreakingNewsProps> = ({ hour, title, href }) => {
   return (
     <Link href={href}>
       <div className='flex gap-4 mb-4 pb-2 border-b-2 border-dashed items-center md:w-10/12 md:mx-auto lg:w-full'>
-        <p className='text-2xl font-bold'>{hour}</p>
+        <h3 className='text-2xl font-bold'>{hour}</h3>
         <p className='hover:text-primary duration-300'>{title}</p>
       </div>
     </Link>

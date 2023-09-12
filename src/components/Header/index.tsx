@@ -38,11 +38,11 @@ const Header: FC<any> = () => {
   }, [darkMode])
 
   return (
-    <header className={`${darkMode ? 'dark' : ''}`}>
+    <header className={`${darkMode ? 'dark' : ''}`} role='banner'>
       <div className='flex flex-col p-2 md:py-2 md:p-5 gap-2 md:flex-row md:justify-between'>
         <div className='flex flex-col gap-8 md:flex-row md:justify-between items-center ' >
           <Link href="/">
-            <img src={`/assets/imgs/${darkMode ? 'logo2.png' : 'logo.png'}`} alt="El Telégrafo Logo" />
+            <img src={`/assets/imgs/${darkMode ? 'logo2.png' : 'logo.png'}`} alt="skip to Main Content" />
           </Link>
         </div>
         <div className='flex justify-between px-2'>
@@ -74,19 +74,20 @@ const Header: FC<any> = () => {
                 height={36}
               />
             </Link>
-
-            <label htmlFor="modo-claro-oscuro">
-              <ReactSwitch
-                id='modo-claro-oscuro'
-                aria-label='Modo Claro/Oscuro'
-                checked={darkMode}
-                onChange={() => setDarkMode(!darkMode)}
-                offColor='#faba00'
-                onColor='#374151'
-                checkedIcon={<SunIcon />}
-                uncheckedIcon={<MoonIcon />}
-              />
-            </label>
+            <form lang='es'>
+              <label htmlFor="modo-claro-oscuro">
+                <ReactSwitch
+                  id='modo-claro-oscuro'
+                  aria-label='Modo Claro/Oscuro'
+                  checked={darkMode}
+                  onChange={() => setDarkMode(!darkMode)}
+                  offColor='#faba00'
+                  onColor='#374151'
+                  checkedIcon={<SunIcon />}
+                  uncheckedIcon={<MoonIcon />}
+                />
+              </label>
+            </form>
           </div>
         </div>
       </div>

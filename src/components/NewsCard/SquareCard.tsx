@@ -9,11 +9,12 @@ interface SquareCardProps {
   title: string
   level: NewsLevel
   timeReading: string
-  rounded?: boolean
-  small?: boolean
-  image: string
   alt: string
   href: string
+  image: string
+  rounded?: boolean
+  small?: boolean
+  h1?: boolean
 }
 
 const SquareCard: FC<SquareCardProps> = ({
@@ -24,7 +25,8 @@ const SquareCard: FC<SquareCardProps> = ({
   small = false,
   alt,
   image,
-  href
+  href,
+  h1 = false
 }) => {
   const { darkMode } = useMode()
   return (
@@ -38,7 +40,16 @@ const SquareCard: FC<SquareCardProps> = ({
           className={`${rounded ? 'rounded-lg' : ''} w-full max-h-[450px]`}
         />
         <div className='px-2'>
-          <h3 className={`${small ? 'text-base' : 'text-2xl'} font-bold`}>{title}</h3>
+          {
+            h1
+              ? (
+              <h1 className={`${small ? 'text-base' : 'text-2xl'} font-bold`}>{title}</h1>
+                )
+              : (
+            <h3 className={`${small ? 'text-base' : 'text-2xl'} font-bold`}>{title}</h3>
+                )
+          }
+
           <div className='pt-1'>
             <span className={darkMode ? 'text-primary' : 'text-red-tel'}>{level}</span> · <span className={`${darkMode ? 'text-white' : 'text-terciary'}`}>{timeReading}</span>
           </div>

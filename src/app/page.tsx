@@ -28,6 +28,7 @@ export default async function Home (): Promise<JSX.Element> {
             image={mainNews.image.url}
             alt={mainNews.image.description}
             href={`/noticia/${mainNews.slug}`}
+            h1
           />
         </div>
         <div className='lg:col-span-2 flex flex-col gap-y-2'>
@@ -42,6 +43,7 @@ export default async function Home (): Promise<JSX.Element> {
                 image={news.image.url}
                 alt={news.image.description}
                 href={`/noticia/${news.slug}`}
+                h2
               />
             ))
           }

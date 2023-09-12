@@ -14,6 +14,7 @@ interface LinearCardProps {
   alt: string
   href: string
   big?: boolean
+  h2?: boolean
 }
 
 const LinearCard: FC<LinearCardProps> = ({
@@ -24,7 +25,8 @@ const LinearCard: FC<LinearCardProps> = ({
   image,
   alt,
   href,
-  big = false
+  big = false,
+  h2 = false
 }) => {
   const { darkMode } = useMode()
 
@@ -41,7 +43,15 @@ const LinearCard: FC<LinearCardProps> = ({
           />
         </div>
         <div>
-          <h3 className='font-bold'>{title}</h3>
+          {
+            h2
+              ? (
+              <h2 className='font-bold'>{title}</h2>
+                )
+              : (
+              <h3 className='font-bold'>{title}</h3>
+                )
+          }
           <div>
             <p className={`text-terciary font-light text-sm ${darkMode ? 'text-white' : ''}`}>{description}</p>
             <div className='pt-1'>
