@@ -9,7 +9,7 @@ const Footer = (): JSX.Element => {
     <footer className='flex flex-col py-7 md:flex-row items-center md:pl-5 md:pr-10 justify-between bg-img-fondo-footer h-[600px] md:h-[250px] bg-cover bg-center bg-no-repeat '>
           <div>
             <Link href="/" aria-label='Regresar a la Portada principal'>
-              <img src="/assets/imgs/logo2.png" alt="" className='h-[80px] lg:h-[100px] lg:w-[350px]' />
+              <img src="/assets/imgs/logo2.png" alt="Logo el telégrafo" className='h-[80px] lg:h-[100px] lg:w-[350px]' />
             </Link>
           </div>
           <div className='flex flex-col text-base text-center gap-2 text-white'>

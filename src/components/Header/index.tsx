@@ -42,7 +42,7 @@ const Header: FC<any> = () => {
       <div className='flex flex-col p-2 md:py-2 md:p-5 gap-2 md:flex-row md:justify-between'>
         <div className='flex flex-col gap-8 md:flex-row md:justify-between items-center ' >
           <Link href="/">
-            <img src={`/assets/imgs/${darkMode ? 'logo2.png' : 'logo.png'}`} alt="skip to Main Content" />
+            <img aria-label='logo' src={`/assets/imgs/${darkMode ? 'logo2.png' : 'logo.png'}`} alt="skip to Main Content" />
           </Link>
         </div>
         <div className='flex justify-between px-2'>
